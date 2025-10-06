@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Espresso",
+    "price": 100,
+    "description": "Concentrated black coffee"
+  },
+  {
+    "id": 2,
+    "name": "Americano",
+    "price": 100,
+    "description": "Espresso with hot water"
+  },
+  {
+    "id": 3,
+    "name": "Cappuccino",
+    "price": 200,
+    "description": "Espresso with steamed milk and foam"
+  },
+  {
+    "id": 4,
+    "name": "Latte",
+    "price": 200,
+    "description": "Espresso with steamed milk"
+  },
+  {
+    "id": 5,
+    "name": "Mocha",
+    "price": 280,
+    "description": "Espresso with chocolate and steamed milk"
+  },
+  {
+    "id": 6,
+    "name": "Iced Americano",
+    "price": 180,
+    "description": "Cold Americano coffee served over ice"
+  },
+  {
+    "id": 7,
+    "name": "Iced Latte",
+    "price": 250,
+    "description": "Espresso with cold milk and ice"
+  }
+]
