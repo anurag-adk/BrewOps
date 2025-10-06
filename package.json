@@ -1,0 +1,28 @@
+{
+  "name": "brewops",
+  "version": "1.0.0",
+  "description": "Cafe management system demonstrating concepts of DevOps, CI/CD & Containerization as an assignment for LSPP",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anurag-adk/brewops.git"
+  },
+  "author": "Anurag Adk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anurag-adk/brewops/issues"
+  },
+  "homepage": "https://github.com/anurag-adk/brewops#readme",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
