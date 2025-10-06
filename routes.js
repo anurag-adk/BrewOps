@@ -80,4 +80,13 @@ router.post("/order", (req, res) => {
   });
 });
 
+// Get all orders...
+router.get("/orders", (req, res) => {
+  res.json({
+    message: "All Orders",
+    totalOrders: orders.length,
+    orders: orders,
+  });
+});
+
 module.exports = router;
