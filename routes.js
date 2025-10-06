@@ -23,4 +23,12 @@ router.get("/", (req, res) => {
   });
 });
 
+// Get menu...
+router.get("/menu", (req, res) => {
+  res.json({
+    message: "BrewOps Coffee Menu",
+    items: menu,
+  });
+});
+
 module.exports = router;
