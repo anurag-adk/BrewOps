@@ -2,10 +2,10 @@
   "name": "brewops",
   "version": "1.0.0",
   "description": "Cafe management system demonstrating concepts of DevOps, CI/CD & Containerization as an assignment for LSPP",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "nodemon app.js",
-    "start": "node app.js",
+    "dev": "nodemon server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
