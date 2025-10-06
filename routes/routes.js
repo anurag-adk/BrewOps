@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 //Using json file instead of DB (for demo only)
-const menu = require("./menu.json");
+const menu = require("../data/menu.json");
 
 // In-memory orders storage (for demo only)
 let orders = [];
