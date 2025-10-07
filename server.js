@@ -18,6 +18,11 @@ app.use((req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`BrewOps server started at port: ${PORT}`);
-});
+// Start server only if not in test environment
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`BrewOps server started at port: ${PORT}`);
+  });
+}
+
+module.exports = app;
