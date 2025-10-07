@@ -1,7 +1,7 @@
 # This workflow will create production builds and GitHub releases
 # It triggers on version tags (v1.0.0, v1.1.0-beta, etc.)
 
-name: CD Create Release
+name: Publish & Release
 
 on:
   push:
@@ -53,19 +53,21 @@ jobs:
           outputs: type=docker,dest=/tmp/image.tar
 
       - name: Load image for scanning
-        run: docker load --input /tmp/image.tar
+        run: |
+          docker load --input /tmp/image.tar
+          echo "IMAGE_NAME=$(docker images --format '{{.Repository}}:{{.Tag}}' | head -n1)" >> $GITHUB_ENV
 
       - name: Run Trivy security scan
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: "docker-archive:/tmp/image.tar"
+          image-ref: ${{ env.IMAGE_NAME }}
           format: "sarif"
           output: "trivy-results.sarif"
           severity: "CRITICAL,HIGH"
           exit-code: "0"
 
       - name: Upload Trivy scan results to GitHub Security tab
-        uses: github/codeql-action/upload-sarif@v2
+        uses: github/codeql-action/upload-sarif@v3
         if: always()
         with:
           sarif_file: "trivy-results.sarif"
@@ -106,6 +108,5 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           generate_release_notes: true
-          make_latest: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
