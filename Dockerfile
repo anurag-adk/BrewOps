@@ -1,4 +1,4 @@
-FROM node:18-alpine
+FROM node:18-this-is-a-fake-tag
 
 # Create working directory
 WORKDIR /app
